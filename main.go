@@ -6,20 +6,22 @@ import(
 
 func main(){
     var array []int32 = []int32{1,2,3,4,5}
-    var result = doThing(array)
-    fmt.Println(result)
-
-
+    fmt.Println(doThing(array))
 }
 
-func doThing(array []int32) int32{
-    var operation int32 = 1
-    var score int32 = 0
+func sumArray( array []int32) int32{
     var currentSum int32 = 0
     for _, value := range array {
         // Sum up array
         currentSum += value
     }
+    return currentSum
+}
+
+func doThing(array []int32) int32{
+    var operation int32 = 1
+    var score int32 = 0
+    var currentSum int32 = sumArray(array)
 
     var leftIndex int = 0
     var rightIndex int = len(array) - 1
